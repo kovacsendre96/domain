@@ -1,0 +1,364 @@
+/*=================BASIC SETTINGS/*=================*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+:root {
+    --green-color: #76f19a;
+    --blue-color: #0f2b70;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: Caudex;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+ul {
+    list-style: none;
+}
+.container-fluid {
+    color: var(--blue-color);
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.item-centerized-horizontal {
+    margin: 0 auto;
+}
+
+.flex-container-centerized-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.column {
+    flex-direction: column;
+}
+.page-title {
+    width: 100%;
+    text-align: center;
+    background: var(--green-color);
+    padding: 20px;
+    font-size: 2.2rem;
+    margin: 50px 0;
+    color: var(--blue-color);
+    font-weight: 700;
+}
+
+.section-title {
+    background-color: var(--blue-color);
+    color: var(--green-color);
+    width: 120px;
+    padding: 10px;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    border-radius: 0 15px 15px 0;
+    width: 10px;
+    transition: 0.7s;
+}
+.section-title.active {
+    width: 150px;
+}
+.section-title__text {
+    transition: 0.7s;
+    opacity: 0;
+    width: 150px;
+}
+.section-title__text.active {
+    opacity: 1;
+}
+.other-skills-container,
+.skills {
+    margin: 100px;
+}
+
+/*=================HEADER SETTINGS/*=================*/
+header {
+    background-image: linear-gradient(rgba(15, 43, 112, 0.8), rgba(15, 43, 112, 0.8)),
+        url(img/programmer-working-on-computer-office-1763947.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(15, 43, 112, 0.3);
+}
+.header__content {
+    height: calc(100vh - 60px);
+    overflow: hidden;
+}
+
+nav {
+    height: 60px;
+    background-color: var(--green-color);
+    justify-content: space-around !important;
+}
+.nav__link {
+    text-decoration: none;
+    padding: 25px;
+    font-size: 1.5rem;
+    color: white;
+    transition: 0.5s;
+}
+.nav__link:hover {
+    text-decoration: none;
+}
+.header__img {
+    width: 70%;
+    border-radius: 50%;
+    background-color: var(--green-color);
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition: 0.7s;
+}
+.header__text-container {
+    flex-direction: column;
+}
+.header__text {
+    color: white;
+    padding: 20px;
+    transition: 0.7s;
+    transform: translateY(40%);
+    visibility: hidden;
+}
+.header__text span {
+    color: var(--green-color);
+}
+
+/*=================SECITON #1  TIME LINE/*=================*/
+.fas,
+.far {
+    font-size: 5rem;
+}
+
+.time-line {
+    text-align: center;
+    padding: 50px;
+    height: 400px;
+}
+.time-line-container {
+    position: relative;
+}
+.clock {
+    transition: 1s;
+    opacity: 0;
+}
+.clock.active {
+    opacity: 1;
+    transform: rotate(-360deg);
+}
+.time-line__title,
+.time-line__text {
+    opacity: 0;
+    transition: 0.7s;
+}
+.time-line__text {
+    transform: translateX(-20%);
+}
+.time-line__title.active {
+    opacity: 1;
+}
+.time-line__text.active {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+/*=================SECITON #2 SKILLS/*=================*/
+.skills {
+    position: relative;
+}
+.skill__card {
+    height: 350px !important;
+    background: var(--green-color);
+    border-radius: 15px;
+    margin: 20px;
+}
+.skills-row {
+    /* IDE MAJD VALAMI MARGIN TOPOT KELL TENNI*/
+}
+
+.fa-check-circle {
+    font-size: 1.2rem;
+    color: var(--blue-color);
+}
+.skills__card__top {
+    text-align: center;
+    background: var(--blue-color);
+    color: var(--green-color);
+    padding: 10px;
+    border-radius: 15px 15px 0px 0px;
+    flex-direction: row-reverse;
+}
+.skills__card__top i {
+    font-size: 3rem;
+}
+.skills__card__content {
+    height: 100%;
+    color: white;
+}
+.slider {
+}
+.skill-slider {
+    position: absolute;
+    top: 100px;
+    transform: translateX(-100%);
+    transition: 0.7s;
+}
+.slider.active {
+    transform: translateX(0%);
+}
+
+.skill__card:focus {
+    outline: none;
+}
+.slick-prev:before,
+.slick-next:before {
+    color: #0f2b70 !important;
+}
+.slick-next {
+    right: 0 !important;
+}
+.slick-prev {
+    left: 0 !important;
+}
+.slick-dots li.slick-active button:before {
+    color: #76f19a !important;
+}
+.slick-dots li button::before {
+    color: rgb(83, 83, 83);
+    opacity: 0.8;
+}
+
+/*=================SECITON #3 OTHER SKILLS/*=================*/
+.other-skills {
+    padding: 50px 0;
+    position: relative;
+}
+.svg {
+    width: 3rem;
+    color: var(--green-color);
+    margin-left: 10px;
+}
+.other-skills__header {
+    font-size: 2rem;
+    font-weight: bold;
+    background: var(--blue-color);
+    color: var(--green-color);
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.fab {
+    padding: 10px;
+}
+.other-skills__text {
+    font-size: 1.5rem;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    visibility: hidden;
+    transition: 0.7s;
+    transform: scale(0.5);
+}
+.other-skills__text:last-child {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+.other-skills i {
+    font-size: 3rem;
+}
+.other-skills__circle {
+    border-radius: 50%;
+    margin: 20px;
+    transition: 0.7s;
+    visibility: hidden;
+    transform: scale(0.5);
+}
+.other-skills__circle p {
+    font-size: 1.5rem;
+}
+.other-skills__circle.active,
+.other-skills__text.active {
+    visibility: visible;
+    transform: scale(1);
+}
+
+/*=================SECITON #4 PROJECTS/*=================*/
+.projects {
+}
+.project__card {
+    border-radius: 25px 10px 25px 10px;
+    margin: 25px;
+    transition: 0.5s;
+}
+.project__card:hover {
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+.project__card:focus {
+    outline: none;
+}
+.project__card__bottom {
+    border-radius: 0px 0px 25px 10px;
+    height: 40px;
+    background: var(--blue-color);
+}
+.project__card__img {
+    height: 190px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 25px 10px 0px 0px;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+.project__card__img:hover {
+    filter: grayscale(10%);
+}
+
+.project__card__tittle {
+    color: var(--green-color);
+    margin: 0;
+}
+.project-slider {
+}
+/*=================SECITON #5 CONTACT/*=================*/
+.contact__link {
+    padding: 20px;
+    color: var(--blue-color);
+    transition: 0.5s;
+}
+.contact__link:hover {
+    text-decoration: none;
+}
+.contact__link i {
+    font-size: 3rem;
+    margin-right: 10px;
+}
+.contact__link p {
+    margin: 0;
+}
+.line {
+    padding: 3px;
+    width: 100%;
+    background-color: var(--blue-color);
+}
+
+/*=================RESPONSIVE*=================*/
+@media screen and (max-width: 768px) {
+    .nav__link {
+        padding: 5px;
+        font-size: 1rem;
+    }
+    .header__text{padding: 10px;font-size: 1rem;}
+}
