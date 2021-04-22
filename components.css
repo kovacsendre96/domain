@@ -6,8 +6,8 @@
     scroll-behavior: smooth;
 }
 :root {
-    --green-color: #7DD87D;
-    --blue-color: #0F2B70;
+    --green-color: #7dd87d;
+    --blue-color: #0f2b70;
 }
 body {
     background-color: whitesmoke !important;
@@ -57,7 +57,6 @@ p {
     margin: 30px 0;
     color: var(--blue-color);
     font-weight: 700;
-
 }
 
 .section-title {
@@ -95,12 +94,11 @@ header {
     background-position: center;
     background-size: cover;
     background-color: rgba(15, 43, 112, 0.3);
-   
 }
 .header__content {
     height: calc(100vh - 60px);
     overflow: hidden;
-    margin-top: 60px!important;
+    margin-top: 60px !important;
 }
 
 nav {
@@ -109,7 +107,6 @@ nav {
     justify-content: space-around !important;
     position: fixed !important;
     z-index: 1;
-
 }
 .nav__link {
     text-decoration: none;
@@ -165,6 +162,16 @@ nav {
     opacity: 1;
     transform: rotate(-360deg);
 }
+.clock-future {
+    transform: rotateZ(180deg);
+    transition: 1s;
+    opacity: 0;
+}
+.clock-future.active {
+    transform: rotateZ(-180deg);
+    opacity: 1;
+}
+
 .time-line__title,
 .time-line__text {
     opacity: 0;
@@ -190,9 +197,6 @@ nav {
     background: var(--green-color);
     border-radius: 15px;
     margin: 20px;
-}
-.skills-row {
-    /* IDE MAJD VALAMI MARGIN TOPOT KELL TENNI*/
 }
 
 .fa-check-circle {
@@ -227,8 +231,7 @@ nav {
 .skills__card__content li {
     padding-left: 30px;
 }
-.slider {
-}
+
 .skill-slider {
     position: absolute;
     top: 100px;
@@ -269,7 +272,6 @@ nav {
     width: 3rem;
     color: var(--green-color);
     margin-left: 10px;
-
 }
 .other-skills__header {
     font-size: 2rem;
@@ -318,61 +320,83 @@ nav {
 
     /*=====================CV/*=====================*/
 }
-.cv-container{
-   height:300px
-   
+.cv-container {
+    height: 300px;
 }
 .cv {
-        width: 180px;
-        height: 270px;
-        display: flex;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        background: #fafafa;
-        position: absolute;
-        z-index:0;
-        top: 80px;
+    width: 180px;
+    height: 270px;
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background: #fafafa;
+    position: absolute;
+    z-index: 0;
+    top: 80px;
+    transition: 0.7s;
+}
+.cv.active {
+    animation: rotate 0.5s linear both;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
-        .cv::after {
-            content: "";
-            background: #fafafa;
-            box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-            right: -3px;
-            top: 1px;
-            transform: rotate(1.4deg);
-            height: 98%;
-            position: absolute;
-            width: 100%;
-            z-index: -1;
-        }
-        .cv::before {
-            content: "";
-            background: #fafafa;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-            left: -5px;
-            top: 4px;
-            transform: rotate(-2.5deg);
-            height: 98%;
-            position: absolute;
-            width: 100%;
-            z-index: -1;
-        }
-    
-   
+.cv::after {
+    content: "";
+    background: #fafafa;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    right: -3px;
+    top: 1px;
+    transform: rotate(1.4deg);
+    height: 98%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+.cv::before {
+    content: "";
+    background: #fafafa;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    left: -5px;
+    top: 4px;
+    transform: rotate(-2.5deg);
+    height: 98%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
 
-.cv a,.cv p {
+.cv a,
+.cv p {
     color: var(--blue-color);
- font-size: 0.9rem;
+    font-size: 0.9rem;
     padding: 0;
     margin: 0;
     font-weight: bold;
 }
-.cv a{color: var(--green-color);transition: 0.5s;}
-.cv a:hover{color: var(--blue-color);text-decoration: none;}
-/*=================SECITON #4 PROJECTS/*=================*/
-.projects {
-
+.cv a {
+    color: var(--green-color);
+    transition: 0.5s;
 }
+.cv a:hover {
+    color: var(--blue-color);
+    text-decoration: none;
+}
+/*=================SECITON #4 PROJECTS/*=================*/
 
 .project__card {
     border-radius: 25px 10px 25px 10px;
@@ -412,11 +436,13 @@ nav {
     opacity: 0;
     transition: 0.7s;
 }
-.project-slider.active{
+.project-slider.active {
     opacity: 1;
 }
 /*=================SECITON #5 CONTACT/*=================*/
-.contact-container{overflow: hidden;}
+.contact-container {
+    overflow: hidden;
+}
 .contact__link {
     padding: 20px;
     color: var(--blue-color);
@@ -437,10 +463,21 @@ nav {
     width: 100%;
     background-color: var(--blue-color);
 }
-.contact-items-left{transform: translate(-100%);transition: 0.7s; visibility: hidden;}
-.contact-items-right{transform: translate(100%);transition: 0.7s; visibility: hidden;;}
-.contact-items-right.active,.contact-items-left.active{transform: translate(0%);visibility: visible;;}
-
+.contact-items-left {
+    transform: translate(-100%);
+    transition: 0.7s;
+    visibility: hidden;
+}
+.contact-items-right {
+    transform: translate(100%);
+    transition: 0.7s;
+    visibility: hidden;
+}
+.contact-items-right.active,
+.contact-items-left.active {
+    transform: translate(0%);
+    visibility: visible;
+}
 
 /*=================RESPONSIVE*=================*/
 @media screen and (max-width: 768px) {
@@ -452,5 +489,4 @@ nav {
         padding: 10px;
         font-size: 1rem;
     }
-   
 }

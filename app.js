@@ -54,8 +54,10 @@ window.addEventListener('scroll', () => {
     function timeLineAnim() {
 
         const clock = document.querySelectorAll('.clock');
+        const clockFuture = document.querySelector('.clock-future');
         const timeLineText = document.querySelectorAll('.time-line__text');
         const timeLineTtitle = document.querySelectorAll('.time-line__title');
+        const clockFuturePosition = clockFuture.getBoundingClientRect().top;
         let time = 500;
         for (let i = 0; i < clock.length; i++) {
             let contentPosition = clock[i].getBoundingClientRect().top;
@@ -68,6 +70,17 @@ window.addEventListener('scroll', () => {
                 }, time)
                 time += 500;
             }
+            if (clockFuturePosition < screenPosition) {
+
+                setTimeout(() => {
+                    clockFuture.classList.add('active');
+                    timeLineText[2].classList.add('active');
+                    timeLineTtitle[2].classList.add('active');
+
+
+                }, 1500)
+            }
+
             /*    else {
                    clock[i].classList.remove('active');
                    timeLineText[i].classList.remove('active');
@@ -114,7 +127,7 @@ window.addEventListener('scroll', () => {
 
     function projectAnim() {
         const projects = document.querySelector('.project-slider');
-        let contentPosition = projects.getBoundingClientRect().top/0.8;
+        let contentPosition = projects.getBoundingClientRect().top / 0.8;
         if (contentPosition < screenPosition) {
             setTimeout(() => {
                 projects.classList.add('active');
@@ -126,7 +139,7 @@ window.addEventListener('scroll', () => {
         const contact = document.querySelector('.contact-container');
         const contactLeft = document.querySelector('.contact-items-left');
         const contactRight = document.querySelector('.contact-items-right');
-        let contentPosition = contact.getBoundingClientRect().top/0.8;
+        let contentPosition = contact.getBoundingClientRect().top / 0.8;
         if (contentPosition < screenPosition) {
             setTimeout(() => {
                 contactLeft.classList.add('active');
@@ -135,7 +148,16 @@ window.addEventListener('scroll', () => {
         }
     }
 
-
+    function cvAnim() {
+        const cv = document.querySelector('.cv');
+        const contentPosition = cv.getBoundingClientRect().top / 0.8;
+        if (contentPosition < screenPosition) {
+            setTimeout(() => {
+                cv.classList.add('active')
+            }, 200)
+        }
+    }
+    cvAnim()
     contactAnim()
     projectAnim()
     otherSkillsAnim();
