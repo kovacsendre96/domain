@@ -315,31 +315,60 @@ nav {
 .other-skills__text.active {
     visibility: visible;
     transform: scale(1);
+
+    /*=====================CV/*=====================*/
 }
 .cv-container{
-    height: 150px;
-
-}
-.cv {
-    position: absolute;
-    top: 100px;
-    background: var(--blue-color);
-    width: 90%;
-    color: var(--green-color);
-    text-align: center;
-    padding: 5px;
-    left: 50%;
-    transform: translate(-50%,0);
-    
- 
+   height:300px
    
 }
+.cv {
+        width: 180px;
+        height: 270px;
+        display: flex;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        background: #fafafa;
+        position: absolute;
+        z-index:0;
+        top: 80px;
+}
+
+        .cv::after {
+            content: "";
+            background: #fafafa;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+            right: -3px;
+            top: 1px;
+            transform: rotate(1.4deg);
+            height: 98%;
+            position: absolute;
+            width: 100%;
+            z-index: -1;
+        }
+        .cv::before {
+            content: "";
+            background: #fafafa;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            left: -5px;
+            top: 4px;
+            transform: rotate(-2.5deg);
+            height: 98%;
+            position: absolute;
+            width: 100%;
+            z-index: -1;
+        }
+    
+   
+
 .cv a,.cv p {
-    color: white;
+    color: var(--blue-color);
+ font-size: 0.9rem;
     padding: 0;
     margin: 0;
+    font-weight: bold;
 }
-.cv a{color: var(--green-color);}
+.cv a{color: var(--green-color);transition: 0.5s;}
+.cv a:hover{color: var(--blue-color);text-decoration: none;}
 /*=================SECITON #4 PROJECTS/*=================*/
 .projects {
 
