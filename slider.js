@@ -61,25 +61,14 @@ $(".skill-slider").slick({
    
             breakpoint: 1200,
             settings: {
-              slidesToShow: 3,
+              slidesToShow: 2,
               infinite: true,
               dots:true,
               arrows:true,
             }
        
           },
-          {
-   
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          infinite: true,
-          dots:true,
-          arrows:true,
-          infinite: true,
-        }
-   
-      }, {
+     {
    
         breakpoint: 600,
         settings: {

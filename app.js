@@ -38,7 +38,7 @@ window.addEventListener('scroll', () => {
         let sectionTitleText = document.querySelectorAll('.section-title__text');
 
         for (let i = 0; i < sectionTitle.length; i++) {
-            let contentPosition = sectionTitle[i].getBoundingClientRect().top/0.9;
+            let contentPosition = sectionTitle[i].getBoundingClientRect().top / 0.9;
 
 
             if (contentPosition < screenPosition) {
@@ -111,6 +111,33 @@ window.addEventListener('scroll', () => {
         }
 
     }
+
+    function projectAnim() {
+        const projects = document.querySelector('.project-slider');
+        let contentPosition = projects.getBoundingClientRect().top/0.8;
+        if (contentPosition < screenPosition) {
+            setTimeout(() => {
+                projects.classList.add('active');
+            }, 500)
+        }
+    }
+
+    function contactAnim() {
+        const contact = document.querySelector('.contact-container');
+        const contactLeft = document.querySelector('.contact-items-left');
+        const contactRight = document.querySelector('.contact-items-right');
+        let contentPosition = contact.getBoundingClientRect().top/0.8;
+        if (contentPosition < screenPosition) {
+            setTimeout(() => {
+                contactLeft.classList.add('active');
+                contactRight.classList.add('active');
+            }, 500)
+        }
+    }
+
+
+    contactAnim()
+    projectAnim()
     otherSkillsAnim();
     skillsAnim();
     timeLineAnim()

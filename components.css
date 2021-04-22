@@ -9,6 +9,9 @@
     --green-color: #76f19a;
     --blue-color: #0f2b70;
 }
+body {
+    background-color: whitesmoke !important;
+}
 h1,
 h2,
 h3,
@@ -26,6 +29,7 @@ ul {
 }
 .container-fluid {
     color: var(--blue-color);
+    background-color: whitesmoke;
 }
 
 p {
@@ -50,9 +54,10 @@ p {
     background: var(--green-color);
     padding: 20px;
     font-size: 2.2rem;
-    margin: 50px 0;
+    margin: 30px 0;
     color: var(--blue-color);
     font-weight: 700;
+
 }
 
 .section-title {
@@ -90,16 +95,21 @@ header {
     background-position: center;
     background-size: cover;
     background-color: rgba(15, 43, 112, 0.3);
+   
 }
 .header__content {
     height: calc(100vh - 60px);
     overflow: hidden;
+    margin-top: 60px!important;
 }
 
 nav {
     height: 60px;
     background-color: var(--green-color);
     justify-content: space-around !important;
+    position: fixed !important;
+    z-index: 1;
+
 }
 .nav__link {
     text-decoration: none;
@@ -201,8 +211,21 @@ nav {
     font-size: 3rem;
 }
 .skills__card__content {
-    height: 100%;
+    height: 75%;
     color: white;
+}
+.skills__card__content ul {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+}
+.skills__card__content li {
+    padding-left: 30px;
 }
 .slider {
 }
@@ -246,6 +269,7 @@ nav {
     width: 3rem;
     color: var(--green-color);
     margin-left: 10px;
+
 }
 .other-skills__header {
     font-size: 2rem;
@@ -292,10 +316,35 @@ nav {
     visibility: visible;
     transform: scale(1);
 }
+.cv-container{
+    height: 150px;
 
+}
+.cv {
+    position: absolute;
+    top: 100px;
+    background: var(--blue-color);
+    width: 90%;
+    color: var(--green-color);
+    text-align: center;
+    padding: 5px;
+    left: 50%;
+    transform: translate(-50%,0);
+    
+ 
+   
+}
+.cv a,.cv p {
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+.cv a{color: var(--green-color);}
 /*=================SECITON #4 PROJECTS/*=================*/
 .projects {
+
 }
+
 .project__card {
     border-radius: 25px 10px 25px 10px;
     margin: 25px;
@@ -331,8 +380,14 @@ nav {
     margin: 0;
 }
 .project-slider {
+    opacity: 0;
+    transition: 0.7s;
+}
+.project-slider.active{
+    opacity: 1;
 }
 /*=================SECITON #5 CONTACT/*=================*/
+.contact-container{overflow: hidden;}
 .contact__link {
     padding: 20px;
     color: var(--blue-color);
@@ -353,6 +408,10 @@ nav {
     width: 100%;
     background-color: var(--blue-color);
 }
+.contact-items-left{transform: translate(-100%);transition: 0.7s; visibility: hidden;}
+.contact-items-right{transform: translate(100%);transition: 0.7s; visibility: hidden;;}
+.contact-items-right.active,.contact-items-left.active{transform: translate(0%);visibility: visible;;}
+
 
 /*=================RESPONSIVE*=================*/
 @media screen and (max-width: 768px) {
@@ -360,5 +419,9 @@ nav {
         padding: 5px;
         font-size: 1rem;
     }
-    .header__text{padding: 10px;font-size: 1rem;}
+    .header__text {
+        padding: 10px;
+        font-size: 1rem;
+    }
+   
 }
