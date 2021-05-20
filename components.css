@@ -253,7 +253,7 @@ nav {
     right: 0 !important;
 }
 .slick-prev {
-    left: 0 !important;
+    left: 1 !important;
 }
 .slick-dots li.slick-active button:before {
     color: #76f19a !important;
